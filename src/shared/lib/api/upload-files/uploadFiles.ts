@@ -1,9 +1,6 @@
 import { ApiResponse, baseApi } from '../baseApi'
+import { imgUpload } from './type';
 
-export interface imgUpload {
-  fileId: string
-  url: string
-}
 
 export const uploadFiles = baseApi.injectEndpoints({
   endpoints: builder => ({

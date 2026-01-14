@@ -1,3 +1,5 @@
+import { ConfigFormType } from "@/shared/ui/custom-form/CustomForm";
+
 export const configRegistrations = {
   title: 'Admin Solitude',
   innerTitle: 'Register a new membership',
@@ -9,23 +11,24 @@ export const configRegistrations = {
       fields: [
         {
           typeField: 'input',
+          name: 'login',
           size: 'large',
           placeholder: 'Full name',
+          rules: [
+            { required: true, message: 'Please enter your full name!' },
+            { min: 2, message: 'Name must be at least 2 characters!' }
+          ]
         },
         {
           typeField: 'input',
-          size: 'large',
-          placeholder: 'Email',
-        },
-        {
-          typeField: 'input',
+          name: 'password',
           size: 'large',
           placeholder: 'Password',
-        },
-        {
-          typeField: 'input',
-          size: 'large',
-          placeholder: 'Retype password',
+          type: 'password',
+          rules: [
+            { required: true, message: 'Please enter your password!' },
+            { min: 6, message: 'Password must be at least 6 characters!' }
+          ]
         },
       ],
     },
@@ -33,26 +36,14 @@ export const configRegistrations = {
       className: 'btns-container',
       fields: [
         {
-          typeField: 'checkbox',
-          children: 'I agree to the terms',
-        },
-        {
           typeField: 'button',
+          name: 'register',
           children: 'Register',
           type: 'primary',
           size: 'large',
-        },
-      ],
-    },
-    {
-      className: 'links-container',
-      fields: [
-        {
-          typeField: 'link',
-          children: 'I already have a membership',
-          link: '/login',
+          block: true
         },
       ],
     },
   ],
-}
+} satisfies ConfigFormType
