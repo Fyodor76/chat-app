@@ -9,6 +9,7 @@ export interface ApiResponse<T, M> {
 
 const baseUrl = import.meta.env.VITE_API_URL
 
+console.log(import.meta.env)
 const baseQuery = fetchBaseQuery({
   baseUrl: baseUrl,
   prepareHeaders: headers => {
@@ -19,6 +20,6 @@ const baseQuery = fetchBaseQuery({
 export const baseApi = createApi({
   reducerPath: 'api',
   baseQuery,
-  tagTypes: ['File', 'Auth'],
+  tagTypes: ['File', 'Auth', 'User'],
   endpoints: () => ({}),
 })

@@ -1,16 +1,26 @@
 import { CustomForm } from '@/shared/ui/custom-form/CustomForm'
-import { Card, message } from 'antd'
+import { message } from 'antd'
 import { useForm } from 'antd/es/form/Form'
 import { configRegistrations } from './const/config-registrations'
 import './Registration.scss'
+import { useUser } from '@/shared/lib/api/user/useMutation'
+import { useNavigate } from 'react-router-dom'
+import { Card } from '@/shared/ui/card'
 
 const Registration = () => {
   const [form] = useForm()
+  const navigate = useNavigate()
 
-  const handleSubmit = (values: any) => {
-    console.log('Registration data:', values)
-    // Здесь логика регистрации
-    message.success('Registration successful!')
+  const {create} = useUser()
+
+ const handleSubmit = async (values: any) => {
+    try {
+      await create(values)
+      message.success('Registration successful!')
+      navigate('/login') 
+    } catch (error) {
+      message.error('Registration failed')
+    }
   }
 
   return (

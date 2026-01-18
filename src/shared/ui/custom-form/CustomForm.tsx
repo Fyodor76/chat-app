@@ -66,7 +66,6 @@ interface LinkField extends BaseField {
 
 type FieldType = InputField | ButtonField | CheckboxField | LinkField
 
-// Type guards для проверки типов полей
 const isInputField = (field: FieldType): field is InputField => field.typeField === 'input'
 const isButtonField = (field: FieldType): field is ButtonField => field.typeField === 'button'
 const isCheckboxField = (field: FieldType): field is CheckboxField => field.typeField === 'checkbox'
@@ -115,7 +114,8 @@ export const CustomForm = ({
     >
       {configForm.innerTitle && <p className="card-title">{configForm.innerTitle}</p>}
 
-      {configForm.sections.map((section, sectionIndex) => (
+     <div className='form-content'>
+       {configForm.sections.map((section, sectionIndex) => (
         <div key={sectionIndex} className={classNames('form-section', section.className)}>
           {section.fields.map((field, fieldIndex) => {
             const fieldName = field.name || `field_${sectionIndex}_${fieldIndex}`
@@ -169,7 +169,7 @@ export const CustomForm = ({
 
                 {isLinkField(field) && (
                   <div>
-                    <Link to={field.link || '#'}>{field.children}</Link>
+                    <Link className='form-link' to={field.link || '#'}>{field.children}</Link>
                   </div>
                 )}
               </div>
@@ -177,6 +177,7 @@ export const CustomForm = ({
           })}
         </div>
       ))}
+     </div>
     </Form>
   )
 }

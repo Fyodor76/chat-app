@@ -1,7 +1,7 @@
 import { ConfigFormType } from "@/shared/ui/custom-form/CustomForm";
 
 export const configRegistrations = {
-  title: 'Admin Solitude',
+  title: 'Chat App',
   innerTitle: 'Register a new membership',
   subtitle: '',
   className: '',
@@ -42,8 +42,17 @@ export const configRegistrations = {
           type: 'primary',
           size: 'large',
           block: true
-        },
+        }
       ],
     },
+    {
+      fields: [
+          {
+          typeField: 'link',
+          children: 'Back to auth',
+          link: '/login',
+        },
+      ]
+    }
   ],
 } satisfies ConfigFormType

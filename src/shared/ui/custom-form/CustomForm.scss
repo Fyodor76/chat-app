@@ -10,3 +10,18 @@
   color: #666666;
   max-width: 266px;
 }
+
+.ant-form-item {
+  margin-bottom: 0;
+}
+
+.form-link {
+  gap: 8px;
+  color: #007bff;
+}
+
+.form-content {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}

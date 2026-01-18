@@ -1,5 +1,5 @@
 export const configForgot = {
-  title: 'Admin Solitude',
+  title: 'Chat App',
   innerTitle: 'You forgot your password? Here you can easily retrieve a new password.',
   subtitle: '',
   className: '',

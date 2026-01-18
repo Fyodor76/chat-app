@@ -1,5 +1,5 @@
 export const configLogin = {
-  title: 'Admin Solitude',
+  title: 'Chat App',
   innerTitle: 'Sign in to start your session',
   subtitle: '',
   className: '',
@@ -8,11 +8,13 @@ export const configLogin = {
       className: 'input-container',
       fields: [
         {
+          name: 'login',
           typeField: 'input',
           size: 'large',
           placeholder: 'Email',
         },
         {
+          name: 'password',
           typeField: 'input',
           size: 'large',
           placeholder: 'Password',
@@ -22,10 +24,6 @@ export const configLogin = {
     {
       className: 'btns-container',
       fields: [
-        {
-          typeField: 'checkbox',
-          children: 'Remember Me',
-        },
         {
           typeField: 'button',
           children: 'Sign In',
@@ -37,11 +35,6 @@ export const configLogin = {
     {
       className: 'links-container',
       fields: [
-        {
-          typeField: 'link',
-          children: 'I forgot my password',
-          link: '/forgot',
-        },
         {
           typeField: 'link',
           children: ' Register a new membership',
